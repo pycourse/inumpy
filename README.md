@@ -21,7 +21,7 @@ packages and the workshop materials.
 ## Instructors:
 
 - Albert Huang
-- Tzer-jen Wei
+- [Tzer-jen Wei](mailto:tzerjen@gmail.com)
 - [Yung-Yu Chen](mailto:yyc@solvcon.net)
 
 ## (Tentative) Contents
