@@ -1,0 +1,34 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "ubuntu/trusty64"
+
+  config.ssh.forward_agent = true
+
+  # masterless, mount salt file root
+  #config.vm.synced_folder "salt/roots/", "/srv/"
+
+  #config.vm.provision :salt do |salt|
+  #  salt.minion_config = "salt/minion"
+  #  salt.run_highstate = true
+  #end
+
+  config.vm.provider "virtualbox" do |vb|
+    vb.gui = true
+    vb.name = "inumpy"
+    vb.memory = "2048"
+    vb.customize ["modifyvm", :id, "--vram", "16"]
+    vb.customize ["modifyvm", :id, "--accelerate3d", "on"]
+    vb.customize ["modifyvm", :id, "--clipboard", "bidirectional"]
+  end
+
+  # expose for ipython
+  config.vm.network "forwarded_port", guest: 8888, host: 8888, host_ip: 'localhost', protocol: 'tcp', auto_correct: true
+
+  #config.vm.provision :shell, path: "bootstrap.sh"
+  config.vm.provision :shell, path: "bootstrap-anaconda.sh", privileged: false
+  config.vm.provision :shell, path: "setup-launcher.sh", privileged: false
+  config.vm.provision :shell, path: "setup-dotfiles.sh", privileged: false
+
+end
