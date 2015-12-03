@@ -65,4 +65,6 @@ packages and the workshop materials.
 
 ### Problems (Hands-on)
 
-- Image recognition?
+- Image recognition
+- JPEG-like image compression
+- Hyrid image
