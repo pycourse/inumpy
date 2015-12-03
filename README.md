@@ -29,10 +29,18 @@ packages and the workshop materials.
 ### iPython
 
 - Environment preparation
-- Terminal mode
-- Notebook
-  - Slides
+- User Interface
+  - Terminal mode
+  - Notebook
+  - ? for help
+- Useful magic
+  - timeit, who
+  - run, load, edit, debug
+  - pylab, matplotlib, gui
+  - html, javascript, latex
+  - load_ext
 - Administration
+  - !, %ls, %cd, %shell, %mkdir
 
 ### NumPy Basic Operations
 
